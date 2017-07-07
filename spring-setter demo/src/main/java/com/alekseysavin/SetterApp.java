@@ -3,6 +3,8 @@ package com.alekseysavin;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import springdemo.Organization;
+
 
 public class SetterApp {
 
