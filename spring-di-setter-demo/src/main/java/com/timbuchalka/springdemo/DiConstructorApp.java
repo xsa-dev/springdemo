@@ -1,10 +1,13 @@
-package com.alekseysavin;
+package com.timbuchalka.springdemo;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.timbuchalka.springdemo.domain.HumanResourceDept;
+import com.timbuchalka.springdemo.domain.Organization;
 
-public class DSetterApp {
+
+public class DiConstructorApp {
 
 	public static void main(String[] args) {
 		// create the application context (container)
@@ -14,11 +17,11 @@ public class DSetterApp {
 		Organization org = (Organization) ctx.getBean("myorg");
 		
 		// invoce the company slogan via the bean
-		org.corporateSlogann();
+		System.out.println(org.corporateSlogan());
 		
 		// Print Organization details
-		System.out.println(org);
-		
+		HumanResourceDept hrdept = (HumanResourceDept) ctx.getBean("myhrdept");
+		System.out.println(hrdept.hiringStatus(5500));
 		
 		// close the application context (container)
 		((ClassPathXmlApplicationContext) ctx).close();

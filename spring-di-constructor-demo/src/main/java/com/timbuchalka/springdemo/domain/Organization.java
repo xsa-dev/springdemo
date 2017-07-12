@@ -1,19 +1,22 @@
-package com.alekseysavin;
+package com.timbuchalka.springdemo.domain;
+
+import com.timbuchalka.springdemo.BusinessService;
+import com.timbuchalka.springdemo.CloudServiceImpl;
 
 public class Organization {
-	
+
 	public String companyName;
 	private int yearOfIncorporation;
 	private String postalCode;
 	private int employeeCount;
-	
+	private String slogan;
+	private BusinessService businessService;
+
 	public Organization(String companyName, int yearOfIncorporation) {
 		super();
 		this.companyName = companyName;
 		this.yearOfIncorporation = yearOfIncorporation;
 	}
-
-
 
 	public void setPostalCode(String postalCode) {
 		this.postalCode = postalCode;
@@ -23,11 +26,20 @@ public class Organization {
 		this.employeeCount = employeeCount;
 	}
 
+	public void setSlogan(String slogan) {
+		this.slogan = slogan;
+	}
 
+	public void setBusinessService(BusinessService businessService) {
+		this.businessService = businessService;
+	}
 
-	public void corporateSlogann() {
-		String slogan = "We build the ultimate driving machines!";
-		System.out.println(slogan);
+	public String corporateSlogan() {
+		return slogan;
+	}
+	
+	public String corporateService() {
+		return businessService.offerService(companyName);
 	}
 
 	@Override

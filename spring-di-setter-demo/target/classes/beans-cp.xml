@@ -4,14 +4,40 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-	<bean id="myorg" class="com.alekseysavin.Organization">
-		<constructor-arg value="BMW" name="companyName"></constructor-arg>
-		<constructor-arg value="1929" name="yearOfIncorporation"></constructor-arg>
-		<property name="postalCode" value="56565">
-			
+	<bean id="myorg" class="com.timbuchalka.springdemo.domain.Organization">
+		<constructor-arg value="Google" name="companyName"></constructor-arg>
+		<constructor-arg value="1996" name="yearOfIncorporation"></constructor-arg>
+		<property name="postalCode" value="65454">
+
 		</property>
 		<property name="employeeCount">
-			<value>1000</value>
+			<value>10500</value>
 		</property>
+
+		<property name="slogan" value="We organize the world information and meke it universally accessible and useful">
+
+		</property>
+		<property name="businessService" ref="ecommerceService"></property>
+	</bean>
+	<bean id="cloudService" class="com.timbuchalka.springdemo.serviceimpl.CloudServiceImpl">
+	</bean>
+	<bean id="ecommerceService"
+		class="com.timbuchalka.springdemo.serviceimpl.EcommerceServiceImpl">
+	</bean>
+	<bean
+		class="com.timbuchalka.springdemo.serviceimpl.AgencyRecruitmentServiceImpl">
+	</bean>
+	<bean id="agency"
+		class="com.timbuchalka.springdemo.serviceimpl.AgencyRecruitmentServiceImpl">
+	</bean>
+	<bean id="referral"
+		class="com.timbuchalka.springdemo.serviceimpl.ReferalRecruitmentServiceImpl">
+	</bean>
+	<bean id="myhrdept" class="com.timbuchalka.springdemo.domain.HumanResourceDept">
+	
+	
+	<constructor-arg name="recruitmentService" ref="referral"></constructor-arg>
+	<constructor-arg name="organization" ref="myorg"></constructor-arg>
+		<property name="deptName" value="Human Resource Department"></property>
 	</bean>
 </beans>
