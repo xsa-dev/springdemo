@@ -10,4 +10,18 @@
 		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
 
 
+	<context:component-scan
+		base-package="com.timbuchalka.springdemo.controller">
+	</context:component-scan>
+	<mvc:annotation-driven></mvc:annotation-driven>
+	<bean
+		class="com.timbuchalka.springdemo.service.RandomizerRequestScope"
+		id="randomizer1" scope="request">
+	<aop:scoped-proxy />
+	</bean>
+	<bean id="randomizer2"
+		class="com.timbuchalka.springdemo.service.RandomizerSessionScope"
+		scope="session">
+	<aop:scoped-proxy />
+	</bean>
 </beans>
