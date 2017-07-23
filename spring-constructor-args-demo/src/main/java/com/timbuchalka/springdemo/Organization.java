@@ -1,4 +1,4 @@
-package com.alekseysavin;
+package com.timbuchalka.springdemo;
 
 public class Organization {
 	

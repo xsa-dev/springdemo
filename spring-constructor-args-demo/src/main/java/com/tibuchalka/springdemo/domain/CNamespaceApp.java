@@ -1,10 +1,12 @@
-package com.alekseysavin;
+package com.tibuchalka.springdemo.domain;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import com.timbuchalka.springdemo.Organization;
 
-public class ConstructorArgsApp {
+
+public class CNamespaceApp {
 
 	public static void main(String[] args) {
 		// create the application context (container)
