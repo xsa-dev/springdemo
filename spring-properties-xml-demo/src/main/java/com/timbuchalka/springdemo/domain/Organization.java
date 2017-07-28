@@ -1,5 +1,8 @@
 package com.timbuchalka.springdemo.domain;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+
 import com.timbuchalka.springdemo.service.BusinessService;
 
 
@@ -7,6 +10,7 @@ public class Organization {
 
 	public String companyName;
 	private int yearOfIncorporation;
+	@Value("${org.postalCode}")
 	private String postalCode;
 	private int employeeCount;
 	private String slogan;
@@ -53,7 +57,9 @@ public class Organization {
 		System.out.println("setEmployeeCount called");
 	}
 
-	public void setSlogan(String slogan) {
+	
+	@Autowired
+	public void setSlogan(@Value("${org.slogan}") String slogan) {
 		this.slogan = slogan;
 		System.out.println("setSlogan called");
 	}
@@ -74,6 +80,6 @@ public class Organization {
 	@Override
 	public String toString() {
 		return "Organization [companyName=" + companyName + ", yearOfIncorporation=" + yearOfIncorporation
-				+ ", postalCode=" + postalCode + ", employeeCount=" + employeeCount + "]";
+				+ ", postalCode=" + postalCode + ", employeeCount=" + employeeCount + ", slogan=" + slogan + "]";
 	}
 }

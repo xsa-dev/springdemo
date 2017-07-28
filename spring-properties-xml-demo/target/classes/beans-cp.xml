@@ -9,10 +9,10 @@
 
 	<bean id="myorg" class="com.timbuchalka.springdemo.domain.Organization">
 		<constructor-arg value="${org.companyName}" name="companyName"></constructor-arg>
-		<constructor-arg value="${org.yearOfIncorparation}" name="yearOfIncorporation"></constructor-arg>
-		<property name="postalCode" value="65454"></property>
-		<property name="employeeCount" value="${org.employeeCount}"></property>
-		<property name="slogan"	value="We organize the world information and meke it universally accessible and useful"></property>
+		<constructor-arg value="${org.yearOfIncorporation}" name="yearOfIncorporation"></constructor-arg>
+		
+		<property name="employeeCount" value="${org.emloyeeCount}"></property>
+<!-- 		<property name="slogan"	value="We organize the world information and meke it universally accessible and useful"></property> -->
 		<property name="businessService" ref="cloudService"></property>
 	</bean>
 	<bean id="cloudService" class="com.timbuchalka.springdemo.serviceimpl.CloudServiceImpl">
@@ -25,5 +25,5 @@
 	<context:component-scan
 		base-package="com.timbuchalka.springdemo.domain">
 	</context:component-scan>
-	<context:property-placeholder location="organizatoion.properties" />
+	<context:property-placeholder location="organization.properties" />
 </beans>
