@@ -13,9 +13,9 @@ public class OrganizationDaoImpl implements OrganizationDao {
 
 	private JdbcTemplate jdbcTemplate;
 	
-	public void setDataSource(DataSource datasource) {
+	public void setDataSource(DataSource dataSource) {
 
-		jdbcTemplate = new JdbcTemplate(dateSource);
+		jdbcTemplate = new JdbcTemplate(dataSource);
 	}
 
 	public boolean create(Organization org) {

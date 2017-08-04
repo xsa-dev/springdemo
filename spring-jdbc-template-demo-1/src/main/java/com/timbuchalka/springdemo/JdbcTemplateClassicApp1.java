@@ -13,7 +13,7 @@ public class JdbcTemplateClassicApp1 {
 
 	public static void main(String[] args) {
 		// creating the application context
-		ApplicationContext ctx = new ClassPathXmlApplicationContext("beatn-cp.xml");
+		ApplicationContext ctx = new ClassPathXmlApplicationContext("beans-cp.xml");
 		
 		// Create the bean
 		OrganizationDao dao = (OrganizationDaoImpl) ctx.getBean("orgDao");
