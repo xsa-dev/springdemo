@@ -55,6 +55,7 @@ public class Organization {
 	public void setSlogan(String slogan) {
 		this.slogan = slogan;
 	}
+<<<<<<< HEAD
 
 	@Override
 	public String toString() {
@@ -64,4 +65,6 @@ public class Organization {
 	}
 	
 	
+=======
+>>>>>>> f71da75c227463f8b575df4bca197cf711f7215c
 }

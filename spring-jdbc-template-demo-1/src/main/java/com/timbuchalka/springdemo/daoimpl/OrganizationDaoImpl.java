@@ -4,19 +4,30 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
+<<<<<<< HEAD
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+=======
+import org.springframework.jdbc.core.JdbcTemplate;
+>>>>>>> f71da75c227463f8b575df4bca197cf711f7215c
 
 import com.timbuchalka.springdemo.dao.OrganizationDao;
 import com.timbuchalka.springdemo.domain.Organization;
 
+<<<<<<< HEAD
 
 @Repository("orgDao")
 public class OrganizationDaoImpl implements OrganizationDao {
 
 	private JdbcTemplate jdbcTemplate;
 	@Autowired
+=======
+public class OrganizationDaoImpl implements OrganizationDao {
+
+	private JdbcTemplate jdbcTemplate;
+	
+>>>>>>> f71da75c227463f8b575df4bca197cf711f7215c
 	public void setDataSource(DataSource dataSource) {
 
 		jdbcTemplate = new JdbcTemplate(dataSource);
