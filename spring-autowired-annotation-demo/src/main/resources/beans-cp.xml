@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	default-destroy-method="preDestroy" default-init-method="postConstruct"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+
+
+	<bean id="myorg" class="com.timbuchalka.springdemo.domain.Organization">
+		<constructor-arg value="Google" name="companyName"></constructor-arg>
+		<constructor-arg value="1996" name="yearOfIncorporation"></constructor-arg>
+		<property name="postalCode" value="65454">
+
+		</property>
+		<property name="employeeCount">
+			<value>10500</value>
+		</property>
+
+		<property name="slogan"
+			value="We organize the world information and meke it universally accessible and useful">
+
+		</property>
+		<property name="businessService" ref="cloudService"></property>
+	</bean>
+	<bean id="cloudService" class="com.timbuchalka.springdemo.serviceimpl.CloudServiceImpl">
+	</bean>
+	<bean id="ecommerceService"
+		class="com.timbuchalka.springdemo.serviceimpl.EcommerceServiceImpl">
+	</bean>
+	<!-- <bean class="com.timbuchalka.springdemo.serviceimpl.AgencyRecruitmentServiceImpl"> 
+		</bean> <bean id="agency" class="com.timbuchalka.springdemo.serviceimpl.AgencyRecruitmentServiceImpl"> 
+		</bean> <bean id="referral" class="com.timbuchalka.springdemo.serviceimpl.ReferalRecruitmentServiceImpl"> 
+		</bean> <bean id="myhrdept" class="com.timbuchalka.springdemo.domain.HumanResourceDept"> 
+		<constructor-arg name="recruitmentService" ref="referral"></constructor-arg> 
+		<constructor-arg name="organization" ref="myorg"></constructor-arg> <property 
+		name="deptName" value="Human Resource Department"></property> </bean> -->
+	<bean id="industrialProduct"
+		class="com.timbuchalka.springdemo.domain.product.IndustrialProduct">
+	</bean>
+	<bean id="consumerProduct"
+		class="com.timbuchalka.springdemo.domain.product.ConsumerProduct">
+	</bean>
+	<bean class="com.timbuchalka.springdemo.domain.promotion.TradeFair"
+		id="myfair">
+	</bean>
+	<context:annotation-config></context:annotation-config>
+</beans>

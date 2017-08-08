@@ -62,5 +62,4 @@ public class Organization {
 				+ yearOfIncorporation + ", postalCode=" + postalCode + ", employeeCount=" + employeeCount + ", slogan="
 				+ slogan + "]";
 	}
-	
-	}
+}
