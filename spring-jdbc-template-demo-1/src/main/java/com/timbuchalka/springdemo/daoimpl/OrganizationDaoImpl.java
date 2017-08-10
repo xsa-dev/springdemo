@@ -16,7 +16,6 @@ import com.timbuchalka.springdemo.domain.Organization;
 public class OrganizationDaoImpl implements OrganizationDao {
 
 	private JdbcTemplate jdbcTemplate;
-	
 	@Autowired
 	public void setDataSource(DataSource dataSource) {
 
