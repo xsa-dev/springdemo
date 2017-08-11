@@ -22,4 +22,9 @@
 	
 	<context:component-scan base-package="com.timbuchalka.springdemo"></context:component-scan>
 	<context:property-placeholder location="organization.properties" />
+	<bean id="orgDao"
+		class="com.timbuchalka.springdemo.daoimpl.OrganizationDaoImpl">
+	<property name="dataSource" ref="ds"></property>
+	</bean>
+	
 </beans>

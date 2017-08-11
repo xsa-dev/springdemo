@@ -47,6 +47,6 @@ public class DaoUtils {
 		}
 	
 		public static void printOrganizationCount(List<Organization> orgs, String operation) {
-			System.out.println("\n***********Currently we have " + orgs.size() + " organizations after " + operation + "operation" + " ");
+			System.out.println("\n***********Currently we have " + orgs.size() + " organizations after " + operation + " operation" + " ");
 		}
 	}

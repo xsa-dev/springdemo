@@ -7,6 +7,10 @@ public class Organization {
 	private String postalCode;
 	private int employeeCount;
 	private String slogan;
+	
+	public Organization() {
+		
+	}
 
 	public Organization(String companyName, int yearOfIncorporation, String postalCode, int employeeCount,
 			String slogan) {
