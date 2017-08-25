@@ -24,10 +24,5 @@
     <!-- Uncomment this to disable session persistence across Tomcat restarts -->
     <!--
     <Manager pathname="" />
-    -->    
-    
-  <Resource name="jdbc/springdb" auth="Container" type="javax.sql.DataSource"
-               maxActive="100" maxIdle="30" maxWait="10000"
-               username="devuser" password="devuser" driverClassName="com.mysql.cj.jdbc.Driver"
-               url="jdbc:mysql://localhost:3306/spring_db?useSSL=false"/>
+    -->
 </Context>
