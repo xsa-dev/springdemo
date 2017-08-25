@@ -55,7 +55,7 @@ public class NamedJdbcTemplateApp1 {
 		daoUtils.pringOrganizations(dao.getAllOrganizations(), daoUtils.deleteOperation);
 
 		// Cleanup
-		dao.cleanup();
+		//dao.cleanup();
 		daoUtils.printOrganizationCount(dao.getAllOrganizations(), daoUtils.cleanupOperation);
 	}
 
