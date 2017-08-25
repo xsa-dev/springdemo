@@ -8,7 +8,7 @@
 <title>List organizations using Service</title>
 </head>
 <body>
-	<h1>Listing organization using Service</h1>
+	<h1>Listing organization using a Service</h1>
 	<c:forEach var="row" items="${rs.rows}">
 		Name: $(row.companyName) <br/>
 		Year: $(row.yearOfIncorporation) <br/>

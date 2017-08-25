@@ -7,12 +7,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Listing organization using the JSTL Sql tag</title>
+<title>Listing organizations using the JSTL Sql tag</title>
 </head>
 <body>
 <h1>Listing organizations using the JSTL sql tag</h1>
 	<sql:query var="rs" dataSource="jdbc/springdb">
-		SELECT * FROM organization
+		SELECT * FROM organization;
 	</sql:query>
 	
 	<c:forEach var="row" items="${rs.rows}">
