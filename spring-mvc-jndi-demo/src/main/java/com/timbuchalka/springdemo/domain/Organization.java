@@ -14,7 +14,6 @@ public class Organization {
 
 	public Organization(String companyName, int yearOfIncorporation, String postalCode, int employeeCount,
 			String slogan) {
-		super();
 		this.id = id;
 		this.companyName = companyName;
 		this.yearOfIncorporation = yearOfIncorporation;

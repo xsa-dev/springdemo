@@ -26,7 +26,7 @@ public class OrganizationController {
 
 		List<Organization> orgs = organizationService.getOrgList();
 		model.addAttribute("orgList", orgs);
-		return "listOfOrganiztion2";
+		return "listOrganization2";
 		
 	}
 	
