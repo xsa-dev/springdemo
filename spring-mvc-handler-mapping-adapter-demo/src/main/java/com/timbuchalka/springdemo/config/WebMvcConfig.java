@@ -6,6 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.lookup.JndiDataSourceLookup;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
@@ -31,7 +32,6 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
 		RequestMappingHandlerMapping rmhm = new RequestMappingHandlerMapping();
 		rmhm.setUseSuffixPatternMatch(false);
 		rmhm.setUseTrailingSlashMatch(false);
-		
 		return rmhm;
 
 	}
