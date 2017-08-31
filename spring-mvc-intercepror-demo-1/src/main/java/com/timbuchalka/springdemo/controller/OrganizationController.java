@@ -15,19 +15,17 @@ public class OrganizationController {
 	
 	@Autowired
 	private OrganizationService organizationService;
-
-	@RequestMapping("/jstlsql")
-	public String listOrganizationUsigSQLTag() {
-		return "listOrganization1";
-	}
 	
-	@RequestMapping("/service")
-	public String listOrganizationUsingService(Model model) {
+	@RequestMapping("/location")
+	public String addLocation() {
+		return "location";
+	}
 
+	@RequestMapping("/listOrgs")
+	public String listOrganizations(Model model) {
 		List<Organization> orgs = organizationService.getOrgList();
 		model.addAttribute("orgList", orgs);
-		return "listOrganization2";
-		
+		return "listOrganizations";		
 	}
 	
 }

@@ -10,9 +10,13 @@
 <body>
 	<h1>Organization home page</h1>
 	<c:set var="contextPath" value="${pageContext.request.contextPath}" />
-	<ul>
-		<li><a href="${contextPath}/jstlsql">List organiation using JSTL sql tags</a><br/></li>
-		<li><a href="${contextPath}/service">Listing organizations using Service</a></li>
-	</ul>
+	
+		<h2 align="center" style="color#DF0101">Welcome! <c:out value="${greeting}"></c:out>!</h2>
+		<hr/>
+		<h1 align="center">Organiztion Details</h1>
+		<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
+		<div style="text-align: center">
+			<a href=${"contextPath/location"} style="font-size: 30px">Click here to get organization details for your location.</a>
+		</div>
 </body>
 </html>
