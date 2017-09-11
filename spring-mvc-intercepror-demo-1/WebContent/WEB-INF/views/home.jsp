@@ -8,10 +8,10 @@
 <title>Organization home page</title>
 </head>
 <body>
-	<h1>Organization home page</h1>
+	<!--  <h1>Organization home page</h1> -->
 	<c:set var="contextPath" value="${pageContext.request.contextPath}" />
 	
-		<h2 align="center" style="color#DF0101">Welcome! <c:out value="${greeting}"></c:out>!</h2>
+		<h2 align="center" style="color: #DF0101">Welcome! <c:out value="${greeting}"></c:out>!</h2>
 		<hr/>
 		<h1 align="center">Organiztion Details</h1>
 		<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
