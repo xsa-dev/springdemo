@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>location details</title>
+<title>Location details</title>
 <style>
 input[type=text] {
 	padding: 10px;
@@ -34,13 +34,13 @@ h2 {
 		<c:out value="${greeting}"></c:out>
 	</h2>
 	<hr />
-
+	<h2>Submit your location foe a list of Organizations</h2>
 	<div style="text-align: center">
 		<form action="listOrgs">
-			<input type="text" name="locationName">
+			<input type="text" name="locationName"> <br/>
 			<input type="submit" value="Get Organizations"><br/>
 		</form>
-		</div>
-		
+	</div>
+
 </body>
 </html>

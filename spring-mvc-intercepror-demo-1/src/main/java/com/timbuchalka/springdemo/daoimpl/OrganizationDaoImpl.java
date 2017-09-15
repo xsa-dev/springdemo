@@ -16,7 +16,7 @@ import org.springframework.stereotype.Repository;
 import com.timbuchalka.springdemo.dao.OrganizationDao;
 import com.timbuchalka.springdemo.domain.Organization;
 
-@Repository("orgDao")
+@Repository//("orgDao")
 public class OrganizationDaoImpl implements OrganizationDao {
 
 	private NamedParameterJdbcTemplate namedParamJdbcTemplate;
@@ -77,7 +77,7 @@ public class OrganizationDaoImpl implements OrganizationDao {
 	}
 
 	public void cleanup() {
-		String sqlQuery = "TRUNCATE organization";
+		String sqlQuery = "TRUNCATE TABLE organization";
 		namedParamJdbcTemplate.getJdbcOperations().execute(sqlQuery);
 	}
 

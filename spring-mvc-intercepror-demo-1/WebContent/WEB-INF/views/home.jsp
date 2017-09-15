@@ -16,7 +16,7 @@
 		<h1 align="center">Organiztion Details</h1>
 		<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 		<div style="text-align: center">
-			<a href=${"contextPath/location"} style="font-size: 30px">Click here to get organization details for your location.</a>
+			<a href="${contextPath}/location" style="font-size: 30px">Click here to get organization details for your location.</a>
 		</div>
 </body>
 </html>
