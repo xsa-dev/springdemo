@@ -14,7 +14,7 @@ import com.timbuchalka.springdemo.domain.Organization;
 @Service
 public class DaoUtils {
 	
-	public static Logger LOGGER = LoggerFactory.getLogger("Logging Test");
+	public static Logger LOGGER = LoggerFactory.getLogger("Logging Tester");
 	public  final String createOperation = "CREATE";
 	public  final String readOperation = "READ";
 	public  final String updateOperation = "UPDATE";
