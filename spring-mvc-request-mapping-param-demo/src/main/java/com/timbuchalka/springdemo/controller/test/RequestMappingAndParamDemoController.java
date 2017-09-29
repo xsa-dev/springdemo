@@ -21,7 +21,8 @@ public class RequestMappingAndParamDemoController {
 	@RequestMapping
 	public String requestMappingAndParamTest1(@RequestParam("orgName") String orgName, Model model) {
 		model.addAttribute("orgname", orgName);
-		model.addAttribute("testSerial", "test1");
+
+		model.addAttribute("testserial", "test1");
 		return "requestMappingAndParamResults";
 	}
 }
