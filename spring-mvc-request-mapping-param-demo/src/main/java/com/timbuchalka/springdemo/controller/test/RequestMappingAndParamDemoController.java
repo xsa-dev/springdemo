@@ -21,7 +21,11 @@ public class RequestMappingAndParamDemoController {
 	@RequestMapping
 	public String requestMappingAndParamTest1(@RequestParam("orgName") String orgName, Model model) {
 		model.addAttribute("orgname", orgName);
+<<<<<<< HEAD
 		model.addAttribute("testSerial", "test1");
+=======
+		model.addAttribute("testserial", "test1");
+>>>>>>> 3642404875667e9d5f6da185606630ec679f9049
 		return "requestMappingAndParamResults";
 	}
 }
