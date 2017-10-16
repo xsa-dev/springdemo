@@ -58,4 +58,41 @@ public class RequestMappingAndParamDemoController {
 		return "requestMappingAndParamResults";
 	}
 	
+//	// test 6, subtest 1: Testing @RequestMapping
+//		@RequestMapping(value="/test6")
+//		public String requestMappingAndParamTest6Subtest1(@RequestParam String orgname, Model model) {
+//			model.addAttribute("orgname", orgname);
+//			model.addAttribute("testserial", "test6-subtest1");
+//			return "requestMappingAndParamResults";
+//		}
+	
+	// test 6, subtest 1: Testing removal of @RequestMapping amniguty with the 
+	// same base URI but
+	//	with different a different parameter
+		@RequestMapping(value="/test6", params="orgname")
+		public String requestMappingAndParamTest6Subtest1(@RequestParam String orgname, Model model) {
+			model.addAttribute("orgname", orgname);
+			model.addAttribute("testserial", "test6-subtest1");
+			return "requestMappingAndParamResults";
+		}
+		
+		// test 6, subtest 2: Testing removal of @RequestMapping amniguty with the 
+		// same base URI but
+		//	with different a different parameter
+	
+		@RequestMapping(value="/test6", params="empcount")
+		public String requestMappingAndParamTest6Subtest2(@RequestParam String empcount, Model model) {
+			model.addAttribute("orgname", empcount);
+			model.addAttribute("testserial", "test6-subtest2");
+			return "requestMappingAndParamResults2";
+		}	
+	
+//	// test 6, subtest 2: Testing @RequestMapping
+//		@RequestMapping(value="/test6")
+//		public String requestMappingAndParamTest6Subtest2(@RequestParam String empcount, Model model) {
+//			model.addAttribute("orgname", empcount);
+//			model.addAttribute("testserial", "test6-subtest2");
+//			return "requestMappingAndParamResults";
+//		}	
+
 }
