@@ -1,13 +1,12 @@
 package com.timbuchalka.springdemo.service;
 
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import com.timbuchalka.springdemo.domain.Organization;
 
 import com.timbuchalka.springdemo.dao.OrganizationDao;
+import com.timbuchalka.springdemo.domain.Organization;
 
 @Service
 public class OrganizationService {
@@ -19,4 +18,5 @@ public class OrganizationService {
 		List<Organization> orgList = organizationDao.getAllOrganizations();
 		return orgList;
 	}
+
 }

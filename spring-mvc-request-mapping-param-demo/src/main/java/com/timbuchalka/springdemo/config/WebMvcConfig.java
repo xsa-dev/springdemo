@@ -7,12 +7,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.lookup.JndiDataSourceLookup;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
-import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
 import org.springframework.web.servlet.view.JstlView;
 import org.springframework.web.servlet.view.UrlBasedViewResolver;
 
@@ -25,9 +23,11 @@ import com.timbuchalka.springdemo.interceptors.HeaderInterceptor;
 public class WebMvcConfig extends WebMvcConfigurerAdapter {
 
 	@Autowired
-	private HeaderInterceptor headerInterceptor1;
+	private HeaderInterceptor headerInterceptor;
+	
 	@Autowired
-	private ExecutionTimerInterceptor executionTimeInterceptor; 
+	private ExecutionTimerInterceptor executionTimerInterceptor;
+	
 	@Bean
 	public DataSource dataSource() {
 		final JndiDataSourceLookup dsLookup = new JndiDataSourceLookup();
@@ -35,6 +35,7 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
 		DataSource dataSource = dsLookup.getDataSource("jdbc/springdb");
 		return dataSource;
 	}
+	
 
 	@Bean
 	public UrlBasedViewResolver urlBasedViewResolver() {
@@ -48,12 +49,13 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
 	@Override
 	public void addViewControllers(ViewControllerRegistry registry) {
 		registry.addViewController("/").setViewName("testMvcHome");
-	}	
-	
+	}
+
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
-		registry.addInterceptor(headerInterceptor1);
-		registry.addInterceptor(executionTimeInterceptor).addPathPatterns("/location");
-		
+		registry.addInterceptor(headerInterceptor);
+		registry.addInterceptor(executionTimerInterceptor).addPathPatterns("/location");
 	}
+	
+	
 }

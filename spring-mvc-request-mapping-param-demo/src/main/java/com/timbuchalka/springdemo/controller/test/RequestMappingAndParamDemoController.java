@@ -7,19 +7,20 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@RequestMapping(value="/requestMapppingAndParamDemo")
+@RequestMapping(value="/requestMappingAndParamDemo")
 @Controller
 public class RequestMappingAndParamDemoController {
+	
 	private static Logger LOGGER = LoggerFactory.getLogger(RequestMappingAndParamDemoController.class);
 	
 	@RequestMapping(value="/home")
 	public String home() {
-		return "requesMappingAndParamHome";
+		return "requestMappingAndParamHome";
 	}
-	
+
 	//test 1: Testing @RequestParam without explicit attributes
-	@RequestMapping
-	public String requestMappingAndParamTest1(@RequestParam("orgName") String orgName, Model model) {
+	@RequestMapping(value="/test1")
+	public String requestMappingAndParamTest1(@RequestParam("orgname") String orgName, Model model) {
 		model.addAttribute("orgname", orgName);
 		model.addAttribute("testserial", "test1");
 		return "requestMappingAndParamResults";

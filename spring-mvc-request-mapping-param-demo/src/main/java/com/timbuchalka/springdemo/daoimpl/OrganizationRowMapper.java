@@ -17,6 +17,7 @@ public class OrganizationRowMapper implements RowMapper<Organization> {
 		org.setPostalCode(rs.getString("postal_code"));
 		org.setEmployeeCount(rs.getInt("employee_count"));
 		org.setSlogan(rs.getString("slogan"));
+		
 		return org;
 	}
 
