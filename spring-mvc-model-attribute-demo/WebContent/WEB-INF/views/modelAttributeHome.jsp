@@ -30,6 +30,10 @@ text-align: center;
 <body>
 	<div align="Left">
 	<h1>${testdata1A}</h1>
+	<div align="center">
+	<b>Corporate office: ${testdata3.city} ${testdata3.zipCode}</b>
+	<b>, Registered office: ${address.city} ${address.zipCode}</b>
+	</div>
 	<hr/>
 	${testdata1B} ${testdata2}
 	<hr/>
