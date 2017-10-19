@@ -27,4 +27,11 @@ public class ModelAttributeDemoController {
 		model.addAttribute("testdata1A", "Welcome to the @ModelAttribute Test Bed!");
 		model.addAttribute("testdata1B", "We will test both usage of the @ModelAttribute, on methods and onmethod arguments");
 	}
+	
+	/// Test 2: Demonstrating the usage of the 'name' attribute of the @ModelAttribute annotation (on method)
+	@ModelAttribute(name="testdata2")
+	public String modelAttributeTest2() {
+		LOGGER.info("INSIDE modelAttributeTest2");
+		return "We will conduct a series of test here.";
+	}
 }
