@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.timbuchalka.springdemo.domain.Address;
 
@@ -18,6 +19,36 @@ public class ModelAttributeDemoController {
 		LOGGER.info("INSIDE home: " + System.currentTimeMillis());
 		return "modelAttributeHome";
 	}
+	
+	// version 2 of our home() method
+	@RequestMapping(value = "/home2")
+	public ModelAndView home2() {
+		ModelAndView mav = new ModelAndView();
+		mav.setViewName("modelAttributeHome");
+		mav.addObject("anAddress", new Address());
+		return mav;
+	}
+	
+	// version 3 of our home() method
+	@RequestMapping(value = "/home3")
+	public ModelAndView home3() {
+		ModelAndView mav = new ModelAndView("modelAttributeHome");
+		mav.addObject("anAddress", new Address());
+		return mav;
+	}
+	
+	// version 4 of our home() method
+		@RequestMapping(value = "/home4")
+		public ModelAndView home4() {
+			return new ModelAndView("modelAttributeHome", "anAddress", new Address("Melbourne", "3000"));		
+		}
+		
+	// version 5 of our home() method
+		@RequestMapping(value = "/home5")
+		public String home5(Model model) {
+			model.addAttribute("anAddress", new Address("Brisbane", "4000"));
+			return "modeAttributeHome";		
+		}
 	
 	/*
 	 * Test series to determine the nature sof the @ModelAttribute annotation (on a method)
