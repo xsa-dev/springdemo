@@ -4,8 +4,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.timbuchalka.springdemo.domain.Address;
@@ -25,7 +27,7 @@ public class ModelAttributeDemoController {
 	public ModelAndView home2() {
 		ModelAndView mav = new ModelAndView();
 		mav.setViewName("modelAttributeHome");
-		mav.addObject("anAddress", new Address());
+		mav.addObject("command", new Address());
 		return mav;
 	}
 	
@@ -47,7 +49,7 @@ public class ModelAttributeDemoController {
 		@RequestMapping(value = "/home5")
 		public String home5(Model model) {
 			model.addAttribute("anAddress", new Address("Brisbane", "4000"));
-			return "modeAttributeHome";		
+			return "modelAttributeHome";		
 		}
 	
 	/*
@@ -81,5 +83,13 @@ public class ModelAttributeDemoController {
 	public Address modelAttributeTest4() {
 		LOGGER.info("INSIDE modelAttribureTest4");
 		return new Address("Sydney", "2000");
+	}
+	
+	// Test 5: Testing the @ModelAttribute with 'value' attribute and  default binding
+	@RequestMapping(value="/test5", method=RequestMethod.POST)
+	public String modelAttributeTest5(@ModelAttribute(value="anAddress") Address anAddress, ModelMap model) {
+		model.addAttribute("testdata5", anAddress.getCity());
+		model.addAttribute("testDate5B", anAddress.getZipCode());
+		return "modelAttributeTest";		
 	}
 }
