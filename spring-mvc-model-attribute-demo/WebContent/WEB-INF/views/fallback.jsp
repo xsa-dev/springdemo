@@ -4,16 +4,16 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Ooops!!! </title>
-<style>
-	h2, h3 {
-	color: #DF0101;
-	text-align: center
-	}
-</style>
+<title>Oops!!!</title>
+	<style>
+		h2, h3 {
+			color: #DF0101;
+			text-align: center
+		}
+	</style>
 </head>
 <body>
-	<h2>(test3) Ooops!!! We are extremely sorry! It seems we are a little list (Error code 404)</h2>
-	<h3 style="color:#08298A">Are you perhabs trying to access a page that does not exist?</h3>
+	<h2>(test3) Ooops!!! We are extremely sorry!  It seems we are a little lost (Error code 404)</h2>
+	<h3 style="color:#08298A">Are you perhaps trying to access a page that does not exist?</h3>
 </body>
 </html>

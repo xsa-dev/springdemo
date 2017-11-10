@@ -17,9 +17,8 @@
 	<h2>MVC Test Home</h2>
 	<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 	<div style="text-align:center">
-		<a href="${contextPath}/requestMappingAndParamDemo/home" style="font-size: 20px">Click here to go to the test bed for @RequestMapping and @RequestParam annatation</a><br/>
-		<a href="${contextPath}/home5" style="font-size: 20px">Click here to go to the 2nd home test bed for @ModelAttribute annotation</a>
-		
+		<a href="${contextPath}/requestMappingAndParamDemo/home" style="font-size: 20px">Click here to go to the test bed for @RequestMapping and @RequestParam annotations</a><br/>
+		<a href="${contextPath}/home4" style="font-size: 20px">Click here to go to the test bed for @Model Attribute annotation</a>
 	</div>		
 </body>
 </html>
