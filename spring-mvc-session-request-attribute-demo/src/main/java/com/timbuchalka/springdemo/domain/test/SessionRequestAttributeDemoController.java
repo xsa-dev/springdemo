@@ -28,7 +28,7 @@ public class SessionRequestAttributeDemoController {
 	private static Logger LOGGER = LoggerFactory.getLogger(SessionRequestAttributeDemoController.class);
 	
 	public ModelAndView home() {
-		return new ModelAndView("sessionRequestAttributeHome", "visitorStats", new VisitorData());
+		return new ModelAndView("test/sessionRequestAttributeViews/sessionRequestAttributeHome", "visitorStats", new VisitorData());
 	}
 	
 	@ModelAttribute("visitordata")
@@ -66,7 +66,7 @@ public class SessionRequestAttributeDemoController {
 		
 		}
 		
-		return "sessionRequestAttributeResult";
+		return "test/sessionRequestAttributeViews/sessionRequestAttributeResult";
 		
 	}
 }
