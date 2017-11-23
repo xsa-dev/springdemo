@@ -9,6 +9,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.lookup.JndiDataSourceLookup;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.JstlView;
@@ -56,6 +57,14 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
 		registry.addInterceptor(headerInterceptor);
 		registry.addInterceptor(executionTimerInterceptor).addPathPatterns("/location");
 	}
+
+
+	@Override
+	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		registry.addResourceHandler("/resoursces/**")
+		.addResourceLocations("/resources/css/test");				
+	}
+	
 	
 	
 }
