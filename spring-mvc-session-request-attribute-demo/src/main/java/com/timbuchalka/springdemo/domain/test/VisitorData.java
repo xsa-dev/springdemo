@@ -13,6 +13,7 @@ public class VisitorData implements Serializable {
 
 	private String currentVisitorName;
 	private String currentVisitorEmail;
+	
 	private List<Visitor> visitor = new ArrayList<Visitor>();
 	
 	public VisitorData() {
@@ -37,8 +38,6 @@ public class VisitorData implements Serializable {
 	public void setCurrentVisitoEmail(String currentVisitorEmail) {
 		this.currentVisitorEmail = currentVisitorEmail;
 	}
-	
-	
 	
 	public List<Visitor> getVisitor() {
 		return visitor;
