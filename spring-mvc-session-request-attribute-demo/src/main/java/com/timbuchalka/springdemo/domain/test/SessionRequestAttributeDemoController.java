@@ -29,7 +29,7 @@ public class SessionRequestAttributeDemoController {
 	
 	@RequestMapping("/home")
 	public ModelAndView home() {
-		return new ModelAndView("test/sessionRequestAttributeViews/sessionRequestAttributeHome", "visitorStats", new VisitorData());
+		return new ModelAndView("test/sessionRequestAttributeViews/sessionRequestAttributeHome", "visitorstats", new VisitorData());
 	}
 	
 	@ModelAttribute("visitordata")

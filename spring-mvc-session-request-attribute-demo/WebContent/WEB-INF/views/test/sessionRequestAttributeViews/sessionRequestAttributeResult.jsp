@@ -19,7 +19,7 @@
 	<h3>List of Visitors to this site</h3>
 	
 	<ul>
-	<c:forEach var="visitor" items="${visitordata.visitors}">
+	<c:forEach var="visitor" items="${visitorsdata.visitors}">
 		<li><b><c:out value="${visitor.name}"/>, <c:out value="${visitor.email}"/></b></li>
 	</c:forEach>
 	</ul>

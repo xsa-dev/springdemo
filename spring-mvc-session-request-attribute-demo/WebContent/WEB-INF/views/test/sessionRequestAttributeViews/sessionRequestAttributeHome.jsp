@@ -20,7 +20,7 @@
 			<table>
 				<tr>
 					<td><form:label path="currentVisitorName">Name</form:label></td>
-					<td><form:input path="currentVisitor Name" /></td>
+					<td><form:input path="currentVisitorName" /></td>
 				</tr>
 				<tr>
 					<td><form:label path="currentVisitorEmail">Email</form:label>
