@@ -8,7 +8,7 @@ public class VisitorCount implements Serializable {
 	 * 
 	 */
 	private static final long serialVersionUID = 8249293832427555463L;
-	
+
 	private int count;
 	
 	public VisitorCount(int count) {
@@ -22,7 +22,7 @@ public class VisitorCount implements Serializable {
 	public void setCount(int count) {
 		this.count = count;
 	}
-
+	
 	
 
 }

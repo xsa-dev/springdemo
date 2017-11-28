@@ -11,17 +11,14 @@ public class Visitor implements Serializable {
 	
 	private String name;
 	private String email;
-	
 	public Visitor(String name, String email) {
 		super();
 		this.name = name;
 		this.email = email;
 	}
 	
-	@Override
-	public String toString() {
-		return "Visitor [name=" + name + ", email=" + email + "]";
-	}
+	
+	
 	public String getName() {
 		return name;
 	}
@@ -33,8 +30,10 @@ public class Visitor implements Serializable {
 	}
 	public void setEmail(String email) {
 		this.email = email;
-	}	
-	
-	
-	
+	}
+
+	@Override
+	public String toString() {
+		return "Visitor [name=" + name + ", email=" + email + "]";
+	}
 }

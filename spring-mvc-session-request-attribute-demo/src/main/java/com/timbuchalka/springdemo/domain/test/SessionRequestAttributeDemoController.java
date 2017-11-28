@@ -18,7 +18,7 @@ import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@SessionAttributes(names= {"visitordata", "visitorcount"})
+@SessionAttributes(names={"visitordata","visitorcount"})
 @RequestMapping("/visitorRegister")
 public class SessionRequestAttributeDemoController {
 	
@@ -31,24 +31,25 @@ public class SessionRequestAttributeDemoController {
 	public ModelAndView home() {
 		return new ModelAndView("test/sessionRequestAttributeViews/sessionRequestAttributeHome", "visitorstats", new VisitorData());
 	}
-	
+
 	@ModelAttribute("visitordata")
 	public VisitorData addVisitorData() {
-			List<Visitor> visitors = new ArrayList<Visitor>();
-			VisitorData vData = new VisitorData(null, null, visitors);
-			return vData;
+		List<Visitor> visitors = new ArrayList<Visitor>();
+		VisitorData vData = new VisitorData(null, null, visitors);
+		return vData;
 	}
 	
 	@ModelAttribute("visitorcount")
 	public VisitorCount countVisitors() {
 		return new VisitorCount(0);
 	}
-	
+
 	@RequestMapping(value="/visitor", method=RequestMethod.POST)
 	public String getVisitors(@ModelAttribute("visitor") VisitorData currentVisitor,
-			HttpSession session,
-			SessionStatus sessionStatus,
-			HttpServletRequest request) {
+								HttpSession session,
+								SessionStatus sessionStatus,
+								HttpServletRequest request) {
+		
 		VisitorData visitorDataFromSession = (VisitorData) session.getAttribute("visitordata");
 		visitorService.registerVisitor(visitorDataFromSession, currentVisitor);
 		VisitorCount visitorCount = (VisitorCount) session.getAttribute("visitorcount");
@@ -58,16 +59,14 @@ public class SessionRequestAttributeDemoController {
 		}
 		
 		// debug code
-		
 		LOGGER.info(visitorDataFromSession.toString());
 		if(request.getMethod().equalsIgnoreCase("POST")) {
 			LOGGER.info("This is a POST request");
 		} else {
-			LOGGER.info("This is a GET request");	
-		
+			LOGGER.info("This is a GET request");
 		}
 		
 		return "test/sessionRequestAttributeViews/sessionRequestAttributeResult";
-		
 	}
+
 }

@@ -63,10 +63,10 @@
 			<h3>test 6: Testing @ModelAttribute with no explicit logical view name</h3>
 				<table>
 					<tr>
-						<td><input type="submit" value="Relocate"></td>
+						<td><input type="submit" value="Relocate"/></td>
 					</tr>
 				</table>
-				</form:form>
+		</form:form>
 	</div>
 </body>
 </html>
