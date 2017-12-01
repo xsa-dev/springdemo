@@ -1,5 +1,6 @@
 package com.timbuchalka.springdemo.domain.test;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,9 +11,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
@@ -48,12 +52,26 @@ public class SessionRequestAttributeDemoController {
 	public String getVisitors(@ModelAttribute("visitor") VisitorData currentVisitor,
 								HttpSession session,
 								SessionStatus sessionStatus,
-								HttpServletRequest request) {
+								HttpServletRequest request,
+								@SessionAttribute(name="sessionStartTime") LocalDateTime startTime,
+								@RequestAttribute(name="currentTime") LocalDateTime clockTime,
+								Model model) {
 		
 		VisitorData visitorDataFromSession = (VisitorData) session.getAttribute("visitordata");
 		visitorService.registerVisitor(visitorDataFromSession, currentVisitor);
 		VisitorCount visitorCount = (VisitorCount) session.getAttribute("visitorcount");
 		visitorService.updateCount(visitorCount);
+		
+		Long currentSessionDuration = visitorService.computeDuration(startTime);
+		
+		if(visitorCount.getCount() == 5) {
+			sessionStatus.setComplete();
+			session.invalidate();
+		}
+		
+		model.addAttribute("timeHeading", visitorService.describeCurrentTime(clockTime));
+		model.addAttribute("durationHeading", visitorService.describeCurrentDuration(currentSessionDuration));
+				
 		if(visitorCount.getCount() == 5) {
 			sessionStatus.setComplete();
 		}
