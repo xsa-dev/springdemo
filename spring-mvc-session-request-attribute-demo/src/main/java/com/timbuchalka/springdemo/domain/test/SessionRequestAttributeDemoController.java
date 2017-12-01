@@ -3,6 +3,7 @@ package com.timbuchalka.springdemo.domain.test;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -66,12 +67,15 @@ public class SessionRequestAttributeDemoController {
 		
 		if(visitorCount.getCount() == 5) {
 			sessionStatus.setComplete();
-			session.invalidate();
+//			session.invalidate();
 		}
 		
-		model.addAttribute("timeHeading", visitorService.describeCurrentTime(clockTime));
-		model.addAttribute("durationHeading", visitorService.describeCurrentDuration(currentSessionDuration));
+//		model.addAttribute("timeHeading", visitorService.describeCurrentTime(clockTime));
+//		model.addAttribute("durationHeading", visitorService.describeCurrentDuration(currentSessionDuration));
 				
+		Map<String, Object> modelMap = model.asMap();
+		modelMap.put("timeHeading",  visitorService.describeCurrentTime(clockTime));
+		modelMap.put("durationHeading",  visitorService.describeCurrentDuration(currentSessionDuration));		
 		if(visitorCount.getCount() == 5) {
 			sessionStatus.setComplete();
 		}
