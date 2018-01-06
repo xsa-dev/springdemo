@@ -16,9 +16,22 @@
 	<h1>Congratulations! You have registered your organization</h1>
 	<h2>Details below...</h2>
 	<hr />
-	<div style="width: auto; margin-left:500px" align="left">
-		<h3>Organization Name: <b>${orgreg.orgName}</b></h3>
-		<h3>Counry: <b>${orgreg.country}</b></h3>
+	<div style="width: auto; margin-left: 500px" align="left">
+		<h3>
+			Organization Name: <b>${orgreg.orgName}</b>
+		</h3>
+		<h3>
+			Country: <b>${orgreg.country}</b>
+		</h3>
+
+		<h3>
+			Turnover:
+			<c:forEach var="entry" items="${turnoverlist}">
+				<c:if test="${orgreg.turnover eq entry.key}">
+					<b>${entry.value}</b>
+				</c:if>
+			</c:forEach>
+		</h3>
 	</div>
 </body>
 </html>
