@@ -12,7 +12,7 @@
 </head>
 <body>
 	<div align="center">
-		<h1>Welcomte to the Form Tags Test Bed</h1>
+		<h1>Welcome to the Form Tags Test Bed</h1>
 		<hr />
 		<h3>Register Your Organization with us!</h3>
 		<form:form action="registerOrg" modelAttribute="orgRegistration">
@@ -34,14 +34,25 @@
 							<form:option value="Russia">Russia</form:option>
 							<form:option value="United States">United States</form:option>
 							<form:option value="Egypt">Egypt</form:option>
-
 						</form:select></td>
-
 				</tr>
 
 				<tr>
 					<td><form:label path="turnover">Turnover</form:label></td>
 					<td><form:select path="turnover" items="${turnoverlist}" /></td>
+				</tr>
+
+				<tr>
+					<td><form:label path="type">Type</form:label></td>
+					<td><form:select path="type">
+					<form:option value="NONE">----SELECT-----</form:option>
+					<form:options items="${typelist}"/>
+					</form:select>					 
+				</tr>
+
+				<tr>
+					<td><form:label path="serviceLength">Organization Age</form:label></td>
+					<td><form:select path="serviceLength" items="${serviceLengthList}" /></td>
 				</tr>
 
 				<tr>

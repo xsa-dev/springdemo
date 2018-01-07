@@ -7,6 +7,8 @@ public class OrganizationRegistration {
 	private String orgName;
 	private String country;
 	private String turnover;
+	private String type;
+	private String serviceLength;
 	
 	public String getTurnover() {
 		return turnover;
@@ -31,6 +33,24 @@ public class OrganizationRegistration {
 	public void setOrgName(String orgName) {
 		this.orgName = orgName;
 	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public String getServiceLength() {
+		return serviceLength;
+	}
+
+	public void setServiceLength(String serviceLength) {
+		this.serviceLength = serviceLength;
+	}
+	
+	
 	
 	
 	
