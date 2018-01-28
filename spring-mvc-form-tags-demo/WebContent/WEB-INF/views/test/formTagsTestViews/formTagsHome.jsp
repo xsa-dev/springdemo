@@ -65,8 +65,20 @@
 
 				<tr>
 					<td><form:label path="like">Like our website?</form:label></td>
-					<td><form:checkbox path="like" value="yes"/>Like</td>
+					<td><form:checkbox path="like" value="yes" />Like</td>
 				</tr>
+
+
+				<tr>
+					<td><form:label path="optionalServices">Optional Services Subscriptions</form:label></td>
+					<td>
+					<form:checkbox path="optionalServices" value="emailService" />${subscriptionList.emailService}
+					<form:checkbox path="optionalServices" value="promotionService" />${subscriptionList.promotionService}
+					<form:checkbox path="optionalServices" value="newLetterService" />${subscriptionList.newLetterService}
+				</tr>
+
+
+
 
 
 				<tr>

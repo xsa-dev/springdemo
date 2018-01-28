@@ -40,5 +40,13 @@ public class OrganizationRegistrationService {
 		registeredPreviously.put("false", "No");
 		return registeredPreviously;
 	}
+	
+	public Map<String, String> populateOptionalServices() {
+		Map<String, String> optionalServices = new LinkedHashMap<String, String>();
+		optionalServices.put("emailService", "Mailing List");
+		optionalServices.put("promotionService", "Promotional Emails");
+		optionalServices.put("newLetterService", "Weekly Newsletter");
+		return optionalServices;
+	}
 
 }

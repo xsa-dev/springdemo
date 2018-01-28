@@ -70,8 +70,26 @@
 				</c:otherwise>
 			</c:choose>
 		</h3>
-		
-		
+
+
+		<h3>
+			Optional Services Signed up For:
+			<c:forEach var="entry1" items="${subscriptionList}">
+				<c:forEach var="entry2" items="${orgreg.optionalServices}">
+					<c:if test="${entry2 eq entry1.key}">
+						<c:set var="optservice" scope="request"
+							value="${optservice}${entry1.value}, " />
+					</c:if>
+				</c:forEach>
+			</c:forEach>
+			<b>${optservice.substring(0, optservice.length() -2)}</b>
+		</h3>
+
+
+
+
+
+
 
 	</div>
 </body>
