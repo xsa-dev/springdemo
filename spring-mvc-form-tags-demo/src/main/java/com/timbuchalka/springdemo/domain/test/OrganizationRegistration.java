@@ -1,15 +1,31 @@
 package com.timbuchalka.springdemo.domain.test;
 
 public class OrganizationRegistration {
-
-
-
 	private String orgName;
 	private String country;
 	private String turnover;
 	private String type;
 	private String serviceLength;
-	
+	private boolean registeredPreviously = true;
+
+	private String like;
+
+	public boolean isRegisteredPreviously() {
+		return registeredPreviously;
+	}
+
+	public void setRegisteredPreviously(boolean registeredPreviously) {
+		this.registeredPreviously = registeredPreviously;
+	}
+
+	public String getLike() {
+		return like;
+	}
+
+	public void setLike(String like) {
+		this.like = like;
+	}
+
 	public String getTurnover() {
 		return turnover;
 	}
@@ -17,7 +33,7 @@ public class OrganizationRegistration {
 	public void setTurnover(String turnover) {
 		this.turnover = turnover;
 	}
-	
+
 	public String getCountry() {
 		return country;
 	}
@@ -49,9 +65,5 @@ public class OrganizationRegistration {
 	public void setServiceLength(String serviceLength) {
 		this.serviceLength = serviceLength;
 	}
-	
-	
-	
-	
-	
+
 }
