@@ -84,7 +84,7 @@
 			</c:forEach>
 			<b>${optservice.substring(0, optservice.length() -2)}</b>
 		</h3>
-		
+
 		<h3>
 			Premuim Services Signed up For:
 			<c:forEach var="entry1" items="${premiumServiceList}">
@@ -97,9 +97,16 @@
 			</c:forEach>
 			<b>${premiumservice.substring(0, premiumservice.length() -2)}</b>
 		</h3>
-		
 
 		<h3>Has Overseas Operations: ${orgreg.overseasOperations}</h3>
+
+		<h3>Workforse Size:
+			<c:forEach var="entry" items="${employeeStrengthList}">
+				<c:if test="${orgreg.employeeStrength eq entry.key}">
+					<b>${entry.value}</b>
+				</c:if>
+			</c:forEach>
+		</h3>
 
 
 

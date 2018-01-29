@@ -92,6 +92,15 @@
 				</tr>
 
 
+				<tr>
+					<td><form:label path="employeeStrength">Workforce Size</form:label></td>
+					<td><form:radiobuttons path="employeeStrength"
+							items="${employeeStrengthList}" /></td>
+				</tr>
+
+
+
+
 
 				<tr>
 					<td align="center"><input type="submit" value="Submit" /></td>

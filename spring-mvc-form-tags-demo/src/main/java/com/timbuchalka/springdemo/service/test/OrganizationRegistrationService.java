@@ -51,10 +51,18 @@ public class OrganizationRegistrationService {
 	
 	public Map<String, String> populatePremiumServices() {
 		Map<String, String> premiumServices = new LinkedHashMap<String, String>();
-		premiumServices .put("directoryService", "Directory");
-		premiumServices .put("revenueReportService", "Revenue Reports");
-		premiumServices .put("revenueAnaliticsService", "Revenue Analytics");
+		premiumServices.put("directoryService", "Directory");
+		premiumServices.put("revenueReportService", "Revenue Reports");
+		premiumServices.put("revenueAnaliticsService", "Revenue Analytics");
 		return premiumServices ;
+	}
+	
+	public Map<String, String> populateEmployeeStrength() {
+		Map<String, String> employeeStrength = new LinkedHashMap<String, String>();
+		employeeStrength.put("small", "Less than 100");
+		employeeStrength.put("medium", "Greater than or equal to 100 but less than 1000");
+		employeeStrength.put("large", "1000 or more");
+		return employeeStrength ;
 	}
 
 }

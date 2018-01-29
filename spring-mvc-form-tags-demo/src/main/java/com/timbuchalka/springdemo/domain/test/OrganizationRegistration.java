@@ -11,7 +11,18 @@ public class OrganizationRegistration {
 	private String[] optionalServices;
 	private String[] premiumServices;
 	private String overseasOperations;
+	private String employeeStrength;
 	
+	
+	
+	public String getEmployeeStrength() {
+		return employeeStrength;
+	}
+
+	public void setEmployeeStrength(String employeeStrength) {
+		this.employeeStrength = employeeStrength;
+	}
+
 	public String[] getPremiumServices() {
 		return premiumServices;
 	}
