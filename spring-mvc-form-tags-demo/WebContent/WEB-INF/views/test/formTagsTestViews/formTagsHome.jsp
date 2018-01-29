@@ -71,13 +71,25 @@
 
 				<tr>
 					<td><form:label path="optionalServices">Optional Services Subscriptions</form:label></td>
-					<td>
-					<form:checkbox path="optionalServices" value="emailService" />${subscriptionList.emailService}
-					<form:checkbox path="optionalServices" value="promotionService" />${subscriptionList.promotionService}
-					<form:checkbox path="optionalServices" value="newLetterService" />${subscriptionList.newLetterService}
+					<td><form:checkbox path="optionalServices"
+							value="emailService" />${subscriptionList.emailService} <form:checkbox
+							path="optionalServices" value="promotionService" />${subscriptionList.promotionService}
+						<form:checkbox path="optionalServices" value="newLetterService" />${subscriptionList.newLetterService}
+				</tr>
+
+				<tr>
+					<td><form:label path="premiumServices">Premium Services</form:label></td>
+					<td><form:checkboxes path="premiumServices"
+							items="${premiumServiceList}" /></td>
 				</tr>
 
 
+
+				<tr>
+					<td><form:label path="overseasOperations">Overseas operations?</form:label></td>
+					<td><form:radiobutton path="overseasOperations" value="Yes" />Yes
+						<form:radiobutton path="overseasOperations" value="No" />No
+				</tr>
 
 
 

@@ -9,8 +9,26 @@ public class OrganizationRegistration {
 	private boolean registeredPreviously = true;
 	private String like;
 	private String[] optionalServices;
+	private String[] premiumServices;
+	private String overseasOperations;
 	
+	public String[] getPremiumServices() {
+		return premiumServices;
+	}
+
+	public void setPremiumServices(String[] premiumServices) {
+		this.premiumServices = premiumServices;
+	}
+
+
 	
+	public String getOverseasOperations() {
+		return overseasOperations;
+	}
+
+	public void setOverseasOperations(String overseasOperations) {
+		this.overseasOperations = overseasOperations;
+	}
 
 	public String[] getOptionalServices() {
 		return optionalServices;
