@@ -7,6 +7,7 @@ import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import com.timbuchalka.springdemo.validation.test.AgeConstraint;
+import com.timbuchalka.springdemo.validation.test.EmailVerification;
 
 public class OrganizationRepresentative {
 	@NotBlank(message="* First Name: cannot be blank")
@@ -28,6 +29,11 @@ public class OrganizationRepresentative {
 	@NotBlank(message="* Zipcode: cannot be empty")
 	@Pattern(regexp="^[a-zA-Z-0-9]{6}", message="* Zipcode: 6 charters and/or digits only")
 	private String zipCode;
+	
+	@EmailVerification(message="* Email: is invalid")
+	private String email;
+	
+	
 
 	public void setAge(Integer age) {
 		this.age = age;
@@ -54,6 +60,16 @@ public class OrganizationRepresentative {
 	public void setZipCode(String zipCode) {
 		this.zipCode = zipCode;
 	}
+	
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	
 	
 }
