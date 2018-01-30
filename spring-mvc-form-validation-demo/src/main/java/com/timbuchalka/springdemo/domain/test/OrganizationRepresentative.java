@@ -45,10 +45,16 @@ public class OrganizationRepresentative {
 	private String zipCode;
 	
 	@EmailVerification(message="* Email: is invalid")
-	private String email;
+	@NotBlank(message="* Email cannot be blank")
+	private String email;	
 	
+	@NotBlank(message="* Email cannot be blank")
 	private String verifyEmail;
+	
+	@NotBlank(message="* Password cannot be blank")
 	private String password;
+	
+	@NotBlank(message="* Password cannot be blank")
 	private String verifyPassword;
 
 	public void setAge(Integer age) {
