@@ -1,5 +1,6 @@
 package com.timbuchalka.springdemo.domain.test;
 
+import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotBlank;
@@ -17,12 +18,16 @@ public class OrganizationRepresentative {
 		return lastName;
 	}
 	
-	@AgeConstraint
+	@AgeConstraint(lower=20, upper=70, message="* Age: range 20 to 70 only")
 	private Integer age;
 
 	public Integer getAge() {
 		return age;
 	}
+	
+	@NotBlank(message="* Zipcode: cannot be empty")
+	@Pattern(regexp="^[a-zA-Z-0-9]{6}", message="* Zipcode: 6 charters and/or digits only")
+	private String zipCode;
 
 	public void setAge(Integer age) {
 		this.age = age;
@@ -40,6 +45,14 @@ public class OrganizationRepresentative {
 
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
+	}
+
+	public String getZipCode() {
+		return zipCode;
+	}
+
+	public void setZipCode(String zipCode) {
+		this.zipCode = zipCode;
 	}
 	
 	
