@@ -28,10 +28,18 @@
 				</tr>
 				<tr>
 					<td><form:label path="lastName" cssClass="clabel">Last Name</form:label></td>
-					<td><form:input path="lastName"
-							placeholder="Enter Surname" cssClass="cinput" /></td>
+					<td><form:input path="lastName" placeholder="Enter Surname"
+							cssClass="cinput" /></td>
 					<td><form:errors path="lastName" cssClass="cb" /></td>
 				</tr>
+
+				<tr>
+					<td><form:label path="age" cssClass="clabel">Age</form:label></td>
+					<td><form:input path="age" placeholder="Enter Age"
+							cssClass="cinput" /></td>
+					<td><form:errors path="age" cssClass="cb" /></td>
+				</tr>
+
 				<tr>
 					<td />
 					<td align="center"><input type="submit" value="Submit"
